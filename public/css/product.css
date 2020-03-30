@@ -2,6 +2,7 @@
   width: 20rem;
   max-width: 90%;
   margin: auto;
+  background-color: rgb(39, 39, 39);
 }
 
 .product-item {
@@ -16,7 +17,7 @@
 
 .product__price {
   text-align: center;
-  color: #4d4d4d;
+  color: blanchedalmond;
   margin-bottom: 0.5rem;
 }
 
