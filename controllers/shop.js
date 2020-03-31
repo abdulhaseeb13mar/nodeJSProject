@@ -27,7 +27,15 @@ exports.getCart = (req, res, next) => {
     path: "/cart",
     pageTitle: "Your Cart"
   });
-  console.log("in home");
+  console.log("in cart");
+};
+
+exports.getOrders = (req, res, next) => {
+  res.render("shop/orders.ejs", {
+    path: "/orders",
+    pageTitle: "Your Orders"
+  });
+  console.log("in Orders");
 };
 
 exports.getCheckout = (req, res, next) => {
@@ -35,5 +43,5 @@ exports.getCheckout = (req, res, next) => {
     path: "/checkout",
     pageTitle: "Checkout"
   });
-  console.log("in home");
+  console.log("in checkout");
 };
