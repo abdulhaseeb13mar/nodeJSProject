@@ -1,11 +1,26 @@
 <%- include('../includes/head.ejs') %>
 </head>
 
-<body>
+<body style="color: azure;">
     <%- include('../includes/navigation.ejs') %>
     <main>
-        <h1>
+        <% if (orders.length <= 0) { %>
+        <h1 style="text-align: center;">
             nothing here
         </h1>
+        <% } else { %>
+            <ul>
+                <% orders.forEach(order => { %>
+                    <li>
+                        <h1># <%= order.id %></h1>
+                        <ul>
+                            <% order.products.forEach(product => { %> 
+                                <li><%= product.title %> (<%= product.orderItem.quantity %>)</li>
+                            <% }); %>
+                        </ul>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } %>
     </main>
 <%- include('../includes/end.ejs') %>
