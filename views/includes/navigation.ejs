@@ -1,28 +1,61 @@
 <header class="main-header">
   <nav class="main-header__nav">
     <ul class="main-header__item-list">
-      <li class="main-header__item">
-        <a class="&#60%= path === '/' ? 'active' : '' %>" href="/">Shop</a>
+      <li id="hamburger" class="main-header__item" onclick="toggleMenu();">
+        <i class="fa fa-bars fa-2x" aria-hidden="true" style="color: beige;"></i>
       </li>
       <li class="main-header__item">
-        <a class="&#60%= path === '/products' ? 'active' : '' %>" href="/products">Products</a>
+        <a class="&#60%= path === '/' ? 'active' : '' %> navLink" 
+          href="/" 
+          >
+          <button class="navButton">Shop</button>
+        </a>
       </li>
       <li class="main-header__item">
-        <a class="&#60%= path === '/cart' ? 'active' : '' %>" href="/cart">Cart</a>
+        <a class="&#60%= path === '/products' ? 'active' : '' %> navLink" href="/products"><button class="navButton">Products</button></a>
       </li>
       <li class="main-header__item">
-        <a class="&#60%= path === '/orders' ? 'active' : '' %>" href="/orders">Orders</a>
+        <a class="&#60%= path === '/cart' ? 'active' : '' %> navLink" href="/cart"><button class="navButton">Cart</button></a>
+      </li>
+      <li class="main-header__item">
+        <a class="&#60%= path === '/orders' ? 'active' : '' %> navLink" href="/orders"><button class="navButton">Orders</button></a>
       </li>
       <li class="main-header__item">
         <a
-          class="&#60%= path === '/admin/add-product' ? 'active' : '' %>"
+          class="&#60%= path === '/admin/add-product' ? 'active' : '' %> navLink"
           href="/admin/add-product"
-          >Add Product</a
+          ><button class="navButton">Add Product</button></a
         >
       </li>
       <li class="main-header__item">
-        <a class="&#60%= path === '/admin/products' ? 'active' : '' %>" href="/admin/products">Admin Products</a>
+        <a class="&#60%= path === '/admin/products' ? 'active' : '' %> navLink" href="/admin/products"><button class="navButton">Admin Products</button></a>
       </li>
+    </ul>
+    <ul class="ShopIcon">
+      <li style="font-size: 25px;">Haseeb ShopMania <span><i class="fa fa-shopping-cart fa-spin fa-2x fa-fw"></i></span></li>
     </ul>
   </nav>
 </header>
+<div id="sideMenuId" class="sideMenu" style="margin-left: -43%;">
+<div class="sideMenu-content">
+<div class="sideMenu-item">
+  <a class="navLink" href="/"><button>Shop</button></a>
+</div>
+<div class="sideMenu-item">
+  <a class="navLink" href="/products"><button>Products</button></a>
+</div>
+<div class="sideMenu-item">
+  <a class="navLink" href="/cart"><button>Cart</button></a>
+</div>
+<div class="sideMenu-item">
+  <a class="navLink" href="/orders"><button>Orders</button></a>
+</div>
+<div class="sideMenu-item">
+  <a class="navLink" href="/admin/add-product"><button>Add Product</button></a>
+</div>
+<div class="sideMenu-item">
+  <a class="navLink" href="/admin/products"><button>Admin Product</button></a>
+</div>
+</div>
+</div>
+<div id="modalId" class="modal"></div>

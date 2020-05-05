@@ -27,8 +27,9 @@
             <% if (editing) { %>
                 <input type="hidden" value="<%= product._id %>" name="productId">
             <% } %>
-
-            <button class="btn" type="submit"><% if (editing) { %> Update Product <% } else { %> Add Product<% } %></button>
+            <div style="display: flex; flex-direction: row;  justify-content: center;">
+                <button class="btn" type="submit"><% if (editing) { %> Update Product <% } else { %> Add Product<% } %></button>
+            </div>
         </form>
     </main>
     <%- include('../includes/end.ejs') %>
