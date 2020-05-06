@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
 const errorController = require("./controllers/error");
-const User = require("./models/user");
+// const User = require("./models/user");
 
 const app = express();
 
@@ -16,14 +16,14 @@ const shopRoutes = require("./routes/shop");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use((req, res, next) => {
-  User.findById("5eaf719288563098f1a4beee")
-    .then((user) => {
-      req.user = new User(user.name, user.email, user.cart, user._id);
-      next();
-    })
-    .catch((err) => console.log(err));
-});
+// app.use((req, res, next) => {
+//   User.findById("5eaf719288563098f1a4beee")
+//     .then((user) => {
+//       req.user = new User(user.name, user.email, user.cart, user._id);
+//       next();
+//     })
+//     .catch((err) => console.log(err));
+// });
 
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
@@ -31,7 +31,7 @@ app.use(errorController.get404);
 
 mongoose
   .connect(
-    "mongodb+srv://abdulhaseeb:mongodb123@shop-cluster-pnzzp.gcp.mongodb.net/test?retryWrites=true&w=majority"
+    "mongodb+srv://abdulhaseeb:mongodb123@shop-cluster-pnzzp.gcp.mongodb.net/shop?retryWrites=true&w=majority"
   )
   .then((res) => {
     app.listen(3000);
