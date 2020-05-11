@@ -1,0 +1,112 @@
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form {
+  width: 25rem;
+  max-width: 90%;
+  margin: auto;
+  display: block;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.212),
+    0 17px 50px 0 rgba(0, 0, 0, 0.212);
+  background-color: rgb(39, 39, 39);
+  /* border: 1px white solid; */
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.form-control-auth {
+  padding: 1rem;
+  width: 100%;
+}
+
+.form-control-auth input {
+  background-color: transparent;
+  border: transparent;
+  border-bottom: 2px solid white;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+
+#emaillabel,
+#passwordlabel {
+  padding-bottom: 5px;
+}
+.form-control-auth label {
+  color: white;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-left: 35px;
+}
+
+#passinput,
+#emailinput {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#passinput1,
+#emailinput2 {
+  width: 100%;
+}
+
+#password:focus,
+#email:focus {
+  outline: none;
+  /* box-shadow: none; */
+}
+
+#passinput2 {
+  border-bottom: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+}
+
+#passinput2 i {
+  color: white;
+  padding: 4px;
+  cursor: pointer;
+}
+
+#emailinput1 i {
+  color: white;
+  padding: 4px;
+}
+
+#passinput3,
+#emailinput1 {
+  border: 2px solid white;
+  /* border: 2px solid rgb(99, 10, 182); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  border-radius: 8px;
+  border-bottom-right-radius: 0;
+}
+
+#passinput3 i {
+  color: white;
+  padding: 4px;
+}
+
+#passinput2 i:hover {
+  transition: ease 0.2s;
+  color: rgb(99, 10, 182);
+}
+
+.form-control-auth input::placeholder {
+  color: rgba(255, 255, 255, 0.404);
+  font-size: 15px;
+}

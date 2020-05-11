@@ -1,0 +1,66 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/auth.css">
+<script>
+function togglePasswordVisible() {
+    var x = document.getElementById("password");
+    x.value
+        ? x.type === "password"
+            ? (x.type = "text")
+            : (x.type = "password")
+        : (x.type = "password");
+}
+
+function togglefocus(ref, type) {
+    var color;
+    type == "f" ? color = "rgb(99, 10, 182)" : color = "white";
+    ref.style.borderColor = color;
+    if (ref.id == "email") {
+      document.getElementById("emailinput1").style.borderColor = color;
+    }else {
+      document.getElementById("passinput3").style.borderColor = color;
+      document.getElementById("passinput2").style.borderColor = color;
+    }
+}
+</script>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <form class="login-form" action="/login" method="POST">
+            <div class="form-control-auth">
+                <div id="emaillabel">
+                    <label for="email">Email</label>
+                </div>
+                <div id="emailinput">
+                    <div id="emailinput1">
+                        <i class="fa fa-envelope fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
+                    </div>
+                    <div id="emailinput2">
+                        <input type="email" name="email" id="email" onfocus="togglefocus(this,'f');" onblur="togglefocus(this,'b');" placeholder="Enter your email address">
+                    </div>
+                </div>
+            </div>
+            <div class="form-control-auth">
+                <div id="passwordlabel">
+                    <label for="password">Password</label>
+                </div>
+                <div id="passinput">
+                    <div id="passinput3">
+                        <i class="fa fa-lock fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
+                    </div>
+                    <div id="passinput1">
+                        <input type="password" name="password" id="password" onfocus="togglefocus(this,'f');" onblur="togglefocus(this,'b');" placeholder="Enter your password">
+                    </div>
+                    <div id="passinput2">
+                        <i class="fa fa-eye fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row;  justify-content: center;">
+                <button class="btn" type="submit" style="width: 40%;">Login</button>
+            </div>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>
