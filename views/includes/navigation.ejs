@@ -23,7 +23,8 @@
       <li class="main-header__item">
         <a class="&#60%= path === '/login' ? 'active' : '' %> navLink" href="/login"><button class="navButton">Login</button></a>
       </li>
-      <!-- <li class="main-header__item">
+      <% if (isAuthenticated) { %>
+      <li class="main-header__item">
         <a
           class="&#60%= path === '/admin/add-product' ? 'active' : '' %> navLink"
           href="/admin/add-product"
@@ -32,7 +33,8 @@
       </li>
       <li class="main-header__item">
         <a class="&#60%= path === '/admin/products' ? 'active' : '' %> navLink" href="/admin/products"><button class="navButton">Admin Products</button></a>
-      </li> -->
+      </li>
+      <% } %>
     </ul>
     <ul class="ShopIcon">
       <li style="font-size: 25px;">Haseeb ShopMania <span><i class="fa fa-shopping-cart fa-spin fa-2x fa-fw"></i></span></li>
