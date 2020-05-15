@@ -14,16 +14,13 @@
       <li class="main-header__item">
         <a class="&#60%= path === '/products' ? 'active' : '' %> navLink" href="/products"><button class="navButton">Products</button></a>
       </li>
+      <% if (isAuthenticated) { %>
       <li class="main-header__item">
         <a class="&#60%= path === '/cart' ? 'active' : '' %> navLink" href="/cart"><button class="navButton">Cart</button></a>
       </li>
       <li class="main-header__item">
         <a class="&#60%= path === '/orders' ? 'active' : '' %> navLink" href="/orders"><button class="navButton">Orders</button></a>
       </li>
-      <li class="main-header__item">
-        <a class="&#60%= path === '/login' ? 'active' : '' %> navLink" href="/login"><button class="navButton">Login</button></a>
-      </li>
-      <% if (isAuthenticated) { %>
       <li class="main-header__item">
         <a
           class="&#60%= path === '/admin/add-product' ? 'active' : '' %> navLink"
@@ -34,6 +31,15 @@
       <li class="main-header__item">
         <a class="&#60%= path === '/admin/products' ? 'active' : '' %> navLink" href="/admin/products"><button class="navButton">Admin Products</button></a>
       </li>
+      <li class="main-header__item">
+        <form action="/logout" method="POST" style="width: 100%; height: 100%;">
+          <button type="submit" class="navButton" style="font-weight: bold;">Logout <i style="color: red;" class="fa fa-power-off fa-1x" aria-hidden="true"></i></button>
+        </form>
+      </li>
+      <% } else { %>
+        <li class="main-header__item">
+          <a class="&#60%= path === '/login' ? 'active' : '' %> navLink" href="/login"><button class="navButton">Login</button></a>
+        </li>
       <% } %>
     </ul>
     <ul class="ShopIcon">
