@@ -18,8 +18,8 @@ function togglefocus(ref, type) {
     if (ref.id == "email") {
       document.getElementById("emailinput1").style.borderColor = color;
     }else {
-      document.getElementById("passinput3").style.borderColor = color;
-      document.getElementById("passinput2").style.borderColor = color;
+      ref.parentNode.previousElementSibling.style.borderColor = color;
+      ref.parentNode.nextElementSibling.style.borderColor = color;
     }
 }
 </script>
@@ -28,11 +28,11 @@ function togglefocus(ref, type) {
 <body>
     <%- include('../includes/navigation.ejs') %>
     <main>
-            <form class="login-form" action="/login" method="POST">
-                <div class="form-control-auth">
-                    <div id="emaillabel">
-                        <label for="email">Email</label>
-                    </div>
+        <form class="login-form" action="/signup" method="POST">
+            <div class="form-control-auth">
+                <div id="emaillabel">
+                    <label for="email">Email</label>
+                </div>
                 <div id="emailinput">
                     <div id="emailinput1">
                         <i class="fa fa-envelope fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
@@ -41,11 +41,11 @@ function togglefocus(ref, type) {
                         <input type="email" name="email" id="email" onfocus="togglefocus(this,'f');" onblur="togglefocus(this,'b');" placeholder="Enter your email address">
                     </div>
                 </div>
+            </div>
+            <div class="form-control-auth">
+                <div id="passwordlabel">
+                    <label for="password">Password</label>
                 </div>
-                <div class="form-control-auth">
-                    <div id="passwordlabel">
-                        <label for="password">Password</label>
-                    </div>
                 <div id="passinput">
                     <div id="passinput3">
                         <i class="fa fa-lock fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
@@ -57,11 +57,26 @@ function togglefocus(ref, type) {
                         <i class="fa fa-eye fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
                     </div>
                 </div>
+            </div>
+            <div class="form-control-auth">
+                <div id="passwordlabel">
+                    <label for="password">Confirm Password</label>
                 </div>
-                <div style="display: flex; flex-direction: row;  justify-content: center;">
-                    <button class="btn" type="submit" style="width: 40%;">Login</button>
+                <div id="passinput">
+                    <div id="passinput3">
+                        <i class="fa fa-lock fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
+                    </div>
+                    <div id="passinput1">
+                        <input type="password" name="confirmPassword" id="password" onfocus="togglefocus(this,'f');" onblur="togglefocus(this,'b');" placeholder="Enter password again">
+                    </div>
+                    <!-- <div id="passinput2">
+                        <i class="fa fa-eye fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
+                    </div> -->
                 </div>
-            </form>
+            </div>
+            <div style="display: flex; flex-direction: row;  justify-content: center;">
+                <button class="btn" type="submit" style="width: 40%;">Signup</button>
+            </div>
+        </form>
     </main>
-    
 <%- include('../includes/end.ejs') %>

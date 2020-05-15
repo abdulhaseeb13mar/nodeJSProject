@@ -54,16 +54,6 @@ form {
   border-bottom: 1px solid white;
 }
 
-.sideMenu-item a button {
-  cursor: pointer;
-  font-size: large;
-  color: white;
-  border: none;
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-}
-
 .sideMenu-item:hover {
   background-color: rgb(77, 8, 141);
 }

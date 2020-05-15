@@ -1,11 +1,11 @@
 html {
   height: 100%;
 }
-body {
+/* body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .login-form {
   width: 25rem;

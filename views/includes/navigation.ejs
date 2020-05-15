@@ -40,6 +40,9 @@
         <li class="main-header__item">
           <a class="&#60%= path === '/login' ? 'active' : '' %> navLink" href="/login"><button class="navButton">Login</button></a>
         </li>
+        <li class="main-header__item">
+          <a class="&#60%= path === '/signup' ? 'active' : '' %> navLink" href="/signup"><button class="navButton">Signup</button></a>
+        </li>
       <% } %>
     </ul>
     <ul class="ShopIcon">
@@ -50,23 +53,39 @@
 <div id="sideMenuId" class="sideMenu" style="margin-left: -43%;">
 <div class="sideMenu-content">
 <div class="sideMenu-item">
-  <a class="navLink" href="/"><button>Shop</button></a>
+  <a class="navLink" href="/"><button class="navButton">Shop</button></a>
 </div>
 <div class="sideMenu-item">
-  <a class="navLink" href="/products"><button>Products</button></a>
+  <a class="navLink" href="/products"><button class="navButton">Products</button></a>
 </div>
-<div class="sideMenu-item">
-  <a class="navLink" href="/cart"><button>Cart</button></a>
-</div>
-<div class="sideMenu-item">
-  <a class="navLink" href="/orders"><button>Orders</button></a>
-</div>
-<div class="sideMenu-item">
-  <a class="navLink" href="/admin/add-product"><button>Add Product</button></a>
-</div>
-<div class="sideMenu-item">
-  <a class="navLink" href="/admin/products"><button>Admin Product</button></a>
-</div>
+<% if (isAuthenticated) { %>
+  <div class="sideMenu-item">
+    <a class="navLink" href="/cart"><button class="navButton">Cart</button></a>
+  </div>
+  <div class="sideMenu-item">
+    <a class="navLink" href="/orders"><button class="navButton">Orders</button></a>
+  </div>
+  <div class="sideMenu-item">
+    <a class="navLink" href="/admin/add-product"><button class="navButton">Add Product</button></a>
+  </div>
+  <div class="sideMenu-item">
+    <a class="navLink" href="/admin/products"><button class="navButton">Admin Product</button></a>
+  </div>
+  <div class="sideMenu-item">
+    <form class="navLink" action="/logout" method="POST">
+      <button class="navButton" type="submit">
+        Logout <i style="color: red;" class="fa fa-power-off fa-1x" aria-hidden="true"></i>
+      </button>
+    </form>
+  </div>
+<% } else { %>
+  <div class="sideMenu-item">
+    <a class="navLink" href="/login"><button class="navButton">Login</button></a>
+  </div>
+  <div class="sideMenu-item">
+    <a class="navLink" href="/signup"><button class="navButton">Signup</button></a>
+  </div>
+<% } %>
 </div>
 </div>
 <div id="modalId" class="modal"></div>
