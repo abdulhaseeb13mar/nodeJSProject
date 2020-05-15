@@ -28,7 +28,10 @@ function togglefocus(ref, type) {
 <body>
     <%- include('../includes/navigation.ejs') %>
     <main>
-            <form class="login-form" action="/login" method="POST">
+        <% if (errorMessage) { %>
+            <div class="user-message user-message--error" style="color: white;"><%= errorMessage %></div>
+        <% } %>
+        <form class="login-form" action="/login" method="POST">
                 <div class="form-control-auth">
                     <div id="emaillabel">
                         <label for="email">Email</label>
@@ -62,7 +65,7 @@ function togglefocus(ref, type) {
                 <div style="display: flex; flex-direction: row;  justify-content: center;">
                     <button class="btn" type="submit" style="width: 40%;">Login</button>
                 </div>
-            </form>
+        </form>
     </main>
     
 <%- include('../includes/end.ejs') %>

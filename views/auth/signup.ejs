@@ -28,6 +28,9 @@ function togglefocus(ref, type) {
 <body>
     <%- include('../includes/navigation.ejs') %>
     <main>
+        <% if (errorMessage) { %>
+            <div class="user-message user-message--error" style="color: white;"><%= errorMessage %></div>
+        <% } %>
         <form class="login-form" action="/signup" method="POST">
             <div class="form-control-auth">
                 <div id="emaillabel">
