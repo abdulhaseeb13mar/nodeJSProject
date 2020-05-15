@@ -30,6 +30,12 @@ form {
   background-color: rgb(18, 18, 18, 0.5);
 }
 
+.active {
+  font-weight: bolder;
+  background-color: rgb(77, 8, 141) !important;
+  border-bottom: 2px solid white !important;
+}
+
 .centered {
   text-align: center;
   color: beige;
@@ -280,6 +286,7 @@ form {
   color: white;
   font-size: medium;
   cursor: pointer;
+  outline: none;
   background-color: transparent;
   font-family: "Open Sans", "sans-serif";
 }
