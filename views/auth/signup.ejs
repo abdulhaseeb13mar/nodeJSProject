@@ -31,7 +31,7 @@ function togglefocus(ref, type) {
         <% if (errorMessage) { %>
             <div class="user-message user-message--error" style="color: white;"><%= errorMessage %></div>
         <% } %>
-        <form class="login-form" action="/signup" method="POST">
+        <form class="login-form" action="/signup" method="POST" novalidate>
             <div class="form-control-auth">
                 <div id="emaillabel">
                     <label for="email">Email</label>
