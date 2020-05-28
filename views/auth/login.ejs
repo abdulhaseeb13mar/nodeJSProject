@@ -41,7 +41,15 @@ function togglefocus(ref, type) {
                         <i class="fa fa-envelope fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
                     </div>
                     <div id="emailinput2">
-                        <input type="email" name="email" id="email" onfocus="togglefocus(this,'f');" onblur="togglefocus(this,'b');" placeholder="Enter your email address">
+                        <input 
+                            type="email" 
+                            name="email" 
+                            id="email" 
+                            onfocus="togglefocus(this,'f');" 
+                            onblur="togglefocus(this,'b');" 
+                            placeholder="Enter your email address"
+                            value="<%= oldInput.email %>"
+                        >
                     </div>
                 </div>
                 </div>
@@ -54,7 +62,15 @@ function togglefocus(ref, type) {
                         <i class="fa fa-lock fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
                     </div>
                     <div id="passinput1">
-                        <input type="password" name="password" id="password" onfocus="togglefocus(this,'f');" onblur="togglefocus(this,'b');" placeholder="Enter your password">
+                        <input 
+                            type="password" 
+                            name="password" 
+                            id="password" 
+                            onfocus="togglefocus(this,'f');" 
+                            onblur="togglefocus(this,'b');" 
+                            placeholder="Enter your password"
+                            value="<%= oldInput.password %>"
+                        >
                     </div>
                     <div id="passinput2">
                         <i class="fa fa-eye fa-1x" aria-hidden="true" onclick="togglePasswordVisible();"></i>
